@@ -14,7 +14,7 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | sudo debconf-set-sel
 RUN sudo apt-get install -y systemd
 
 # Now install Influxdb, Grafana, and Telegraf
-ADD influxdb-install /influxdb-install.sh
+ADD influxdb-install.sh /influxdb-install.sh
 RUN ["/bin/bash", "/influxdb-install.sh"]
 
 # Add influx startup script
