@@ -1,0 +1,4 @@
+# Ignore all py files
+*.py
+
+.dockerignore

@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  influx:
+    build: ./
+    ports:
+      - "3:3"
+    network_mode: host
