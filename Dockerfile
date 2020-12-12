@@ -19,6 +19,7 @@ RUN ["/bin/bash", "/influxdb-install.sh"]
 
 # Add influx startup script
 ADD influxdb /etc/init.d/influxdb
+RUN sudo chmod +x /etc/init.d/influxdb
 
 # Add the Grafana configuration file
 ADD GrafanaDashboard.json /etc/grafana/GrafanaDashboard.json

@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Run Influxdb
-sudo chmod +x /etc/init.d/influxd
 sudo service influxdb start 
 
 # Launch Grafana
