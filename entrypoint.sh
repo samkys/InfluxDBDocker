@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Run Influxdb
-sudo systemctl start influxdb 
+sudo service influxdb start 
 
 # Launch Grafana
 /etc/init.d/grafana-server start
