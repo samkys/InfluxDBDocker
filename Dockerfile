@@ -27,6 +27,7 @@ ADD grafana.ini /etc/grafana/grafana.ini
 
 # Entry point
 ADD entrypoint.sh /entry.sh
+RUN sudo service influxdb start
 ENTRYPOINT ["/bin/bash","/entry.sh"]
 
 #CMD tail -f /dev/null
