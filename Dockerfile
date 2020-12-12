@@ -3,11 +3,11 @@ FROM ubuntu:bionic
 RUN  apt-get update \
   && apt-get install -y wget \
   && apt-get install -y curl \
-  && rm -rf /var/lib/apt/lists/* \
-  && apt-get install -y gnupg
+  && rm -rf /var/lib/apt/lists/*
 
 RUN  apt-get update \
-  && apt-get install -y sudo
+  && apt-get install -y sudo \
+  && apt-get install -y gnupg2
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | sudo debconf-set-selections \
     && sudo apt-get install -y -q
