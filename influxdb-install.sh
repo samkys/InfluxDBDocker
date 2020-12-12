@@ -1,8 +1,10 @@
 #!/bin/bash
 
 # Influxdb install
-wget https://dl.influxdata.com/influxdb/releases/influxdb_1.8.3_amd64.deb
-sudo dpkg -i influxdb_1.8.3_amd64.deb
+sudo curl -sL https://repos.influxdata.com/influxdb.key | sudo apt-key add -
+sudo echo "deb https://repos.influxdata.com/ubuntu bionic stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
+sudo apt update
+sudo apt install influxdb
 
 # Telegraf install
 wget https://dl.influxdata.com/telegraf/releases/telegraf_1.15.3-1_amd64.deb

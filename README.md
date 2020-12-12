@@ -5,7 +5,8 @@
 + This is a repository which contains files to build a DOCKER image.
 
 ## 1.1 Dependencies
-+ [Docker Install](https://docs.docker.com/docker-for-windows/install/)
++ Docker compose  
+  - Install via running `sudo apt-get install docker-compose`
 
 # 2. Files
 + [data_to_influx.py](./data_to_influx.py):
@@ -22,9 +23,11 @@
 # 3. Getting started
 1. Make sure you install Docker, see 1.1.
 2. Open a terminal in this directory (Windows powershell as admin assumed)
-3. Run: `docker build -t dbDocker .`  
-    - This builds a docker image from the current directory named dbDocker
+3. Run: `sudo docker-compose build`  
+    - This builds a docker image from the docker-compose file.  
 4. To launch an instance of the image run the following.  
+    - `sudo docker-compose up`
+    - Maybe ignore the rest?
     - `docker run -v c:/users/<you>/Desktop/database/:/var/lib/influxdb/ -ditp 3000:3000 dbDocker`
     - `docker run` tells the container to start a container
     - `-v c:/users/<you>/Desktop/database/:/var/lib/influxdb/` tells the container to mount the /var/libinfluxdb/ directory to a local directory on the host (rename the path to where you want the database info stored...)
